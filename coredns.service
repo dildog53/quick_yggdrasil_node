@@ -1,0 +1,13 @@
+[Unit]
+Description=PopuraDNS coredns service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=
+ExecStart=/usr/bin/env ~/PopuraDNS/coredns -p 53535 -conf ~/PopuraDNS/Corefile
+
+[Install]
+WantedBy=multi-user.target
